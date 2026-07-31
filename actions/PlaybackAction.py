@@ -9,7 +9,8 @@ class PlaybackAction(ActionBase):
     def send_command(self, cmd: str):
         try:
             s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-            s.connect('/tmp/midiplusplus.sock')
+            sock_path = os.path.expanduser('~/.midiplusplus.sock')
+            s.connect(sock_path)
             s.sendall(f"{cmd}\n".encode('utf-8'))
             response = s.recv(1024).decode('utf-8')
             s.close()
