@@ -36,12 +36,13 @@ class OpenSongSelectorAction(PlaybackAction):
                             "actions": [{"id": action_id, "settings": action_settings}],
                             "labels": {
                                 "0": {},
-                                "1": {
+                                "1": {},
+                                "2": {
                                     "text": label_text,
                                     "font-size": 9,
-                                    "alignment": "center"
-                                },
-                                "2": {}
+                                    "alignment": "center",
+                                    "color": [255, 255, 255, 255]
+                                }
                             },
                             "label-control-actions": [0, 0, 0],
                             "image-control-action": 0
