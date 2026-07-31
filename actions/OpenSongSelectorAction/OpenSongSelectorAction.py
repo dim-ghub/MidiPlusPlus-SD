@@ -35,9 +35,9 @@ class OpenSongSelectorAction(PlaybackAction):
                         "0": {
                             "actions": [{"id": action_id, "settings": action_settings}],
                             "labels": {
-                                "0": {},
-                                "1": {},
-                                "2": {
+                                "top": {},
+                                "center": {},
+                                "bottom": {
                                     "text": label_text,
                                     "font-size": 9,
                                     "alignment": "center",
