@@ -11,8 +11,7 @@ class OpenSongSelectorAction(PlaybackAction):
         
     def generate_pages(self, songs):
         try:
-            cols = self.deck_controller.deck.key_layout()[0]
-            rows = self.deck_controller.deck.key_layout()[1]
+            rows, cols = self.deck_controller.deck.key_layout()
         except:
             cols = 5
             rows = 3
