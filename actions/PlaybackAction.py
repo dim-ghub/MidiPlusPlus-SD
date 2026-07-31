@@ -1,5 +1,6 @@
 from src.backend.PluginManager.ActionBase import ActionBase
 import socket
+import os
 from loguru import logger as log
 
 class PlaybackAction(ActionBase):
