@@ -17,9 +17,9 @@ class OpenSongSelectorAction(PlaybackAction):
             cols = 5
             rows = 3
             
-        keys_per_page = (cols * rows) - 2
+        keys_per_page = (cols * rows) - 4
         if keys_per_page <= 0:
-            keys_per_page = 13
+            keys_per_page = 11
             
         pages = []
         for i in range(0, len(songs), keys_per_page):
@@ -58,6 +58,9 @@ class OpenSongSelectorAction(PlaybackAction):
             # Back/Cancel button at 0x0
             page_data["keys"]["0x0"] = make_state("com_midiplusplus_Controller::CloseSongSelector", {}, "Cancel", "cancel.png")
             
+            # Refresh button at 1x0
+            page_data["keys"]["1x0"] = make_state("com_midiplusplus_Controller::OpenSongSelector", {}, "Refresh", "restart.png")
+            
             # Next button
             if p_idx < len(pages) - 1:
                 next_x = cols - 1
@@ -75,6 +78,7 @@ class OpenSongSelectorAction(PlaybackAction):
             for y in range(rows):
                 for x in range(cols):
                     if x == 0 and y == 0: continue
+                    if x == 1 and y == 0: continue
                     if p_idx < len(pages) - 1 and x == cols - 1 and y == rows - 1: continue
                     if p_idx > 0 and x == 0 and y == rows - 1: continue
                     
