@@ -116,7 +116,7 @@ class PluginTemplate(PluginBase):
         self.register(
             plugin_name = "MIDI++ Controller",
             github_repo = "https://github.com/dim-ghub/MidiPlusPlus-SD",
-            plugin_version = "1.0.4",
+            plugin_version = "1.0.5",
             app_version = "1.1.1-alpha"
         )
         
