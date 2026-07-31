@@ -63,7 +63,7 @@ class OpenSongSelectorAction(PlaybackAction):
             
             # Next button
             if p_idx < len(pages) - 1:
-                next_x = cols - 1
+                next_x = 1
                 next_y = rows - 1
                 page_data["keys"][f"{next_x}x{next_y}"] = make_state("com_midiplusplus_Controller::LoadGeneratedPage", {"page_idx": p_idx + 1}, "Next ->", "forward_10.png")
             
@@ -79,8 +79,8 @@ class OpenSongSelectorAction(PlaybackAction):
                 for x in range(cols):
                     if x == 0 and y == 0: continue
                     if x == 1 and y == 0: continue
-                    if p_idx < len(pages) - 1 and x == cols - 1 and y == rows - 1: continue
-                    if p_idx > 0 and x == 0 and y == rows - 1: continue
+                    if x == 0 and y == rows - 1: continue
+                    if x == 1 and y == rows - 1: continue
                     
                     if song_idx < len(page_songs):
                         global_idx = (p_idx * keys_per_page) + song_idx
