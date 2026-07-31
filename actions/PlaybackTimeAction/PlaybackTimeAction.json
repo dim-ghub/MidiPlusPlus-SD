@@ -1,0 +1,7 @@
+{
+    "Name": "Playback Time",
+    "Description": "Displays the current time elapsed and playback speed",
+    "Support": {
+        "Key": "Tested"
+    }
+}

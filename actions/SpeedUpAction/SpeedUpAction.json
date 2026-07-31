@@ -1,0 +1,7 @@
+{
+    "Name": "Speed Up",
+    "Description": "Increases playback speed",
+    "Support": {
+        "Key": "Tested"
+    }
+}

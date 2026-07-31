@@ -1,0 +1,7 @@
+{
+    "Name": "Speed Down",
+    "Description": "Decreases playback speed",
+    "Support": {
+        "Key": "Tested"
+    }
+}

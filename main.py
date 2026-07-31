@@ -11,6 +11,9 @@ from .actions.OpenSongSelectorAction.OpenSongSelectorAction import OpenSongSelec
 from .actions.CloseSongSelectorAction.CloseSongSelectorAction import CloseSongSelectorAction
 from .actions.LoadGeneratedPageAction.LoadGeneratedPageAction import LoadGeneratedPageAction
 from .actions.LoadSongAction.LoadSongAction import LoadSongAction
+from .actions.SpeedUpAction.SpeedUpAction import SpeedUpAction
+from .actions.SpeedDownAction.SpeedDownAction import SpeedDownAction
+from .actions.PlaybackTimeAction.PlaybackTimeAction import PlaybackTimeAction
 
 import os
 
@@ -59,6 +62,30 @@ class PluginTemplate(PluginBase):
             action_name = "Open Song Selector",
         )
         self.add_action_holder(self.open_selector_holder)
+        
+        self.speed_up_holder = ActionHolder(
+            plugin_base = self,
+            action_base = SpeedUpAction,
+            action_id = "com_midiplusplus_Controller::SpeedUp",
+            action_name = "Speed Up",
+        )
+        self.add_action_holder(self.speed_up_holder)
+
+        self.speed_down_holder = ActionHolder(
+            plugin_base = self,
+            action_base = SpeedDownAction,
+            action_id = "com_midiplusplus_Controller::SpeedDown",
+            action_name = "Speed Down",
+        )
+        self.add_action_holder(self.speed_down_holder)
+
+        self.playback_time_holder = ActionHolder(
+            plugin_base = self,
+            action_base = PlaybackTimeAction,
+            action_id = "com_midiplusplus_Controller::PlaybackTime",
+            action_name = "Playback Time",
+        )
+        self.add_action_holder(self.playback_time_holder)
         
         # Internal actions (not typically placed manually by users but registered)
         self.close_selector_holder = ActionHolder(
